@@ -1,0 +1,152 @@
+[
+    {
+        "model": "goods.goods",
+        "pk": 1,
+        "fields": {
+            "name": "Футуристический диван с неоновой подсветкой",
+            "slug": "futuristicheskij-divan-s-neonovoj-podsvetkoj",
+            "description": "Диван в минималистичном стиле с встроенной неоновой подсветкой и обивкой из экокожи. Идеально подходит для современных интерьеров.",
+            "image": "goods_images/futuristic_sofa_with_neon.jpg",
+            "price": "950.00",
+            "discount": "15.00",
+            "quantity": 5,
+            "category": 9,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    },
+    {
+        "model": "goods.goods",
+        "pk": 2,
+        "fields": {
+            "name": "Кровать-капсула с системой умного сна",
+            "slug": "krovat-kapsula-s-umnym-snom",
+            "description": "Футуристическая кровать-капсула с регулируемой температурой, встроенной аудиосистемой и настройками умного сна для максимального комфорта.",
+            "image": "goods_images/smart_sleep_bed.jpg",
+            "price": "2100.00",
+            "discount": "10.00",
+            "quantity": 3,
+            "category": 8,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    },
+    {
+        "model": "goods.goods",
+        "pk": 3,
+        "fields": {
+            "name": "Парящий журнальный столик с гравитационным эффектом",
+            "slug": "paryashij-zhurnalnyj-stolik",
+            "description": "Журнальный столик с эффектом парения благодаря встроенной электромагнитной системе. Инновационный дизайн для истинных ценителей будущего.",
+            "image": "goods_images/floating_coffee_table.jpg",
+            "price": "1200.00",
+            "discount": "5.00",
+            "quantity": 10,
+            "category": 9,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    },
+    {
+        "model": "goods.goods",
+        "pk": 4,
+        "fields": {
+            "name": "Интерактивная стена с изменяемым рельефом",
+            "slug": "interaktivnaya-stena-s-izmenyaemym-relefom",
+            "description": "Уникальная стена с изменяемым рельефом и цветовой гаммой. Управляется через мобильное приложение. Отлично подходит для футуристических жилых и коммерческих помещений.",
+            "image": "goods_images/interactive_wall.jpg",
+            "price": "3500.00",
+            "discount": "0.00",
+            "quantity": 2,
+            "category": 10,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    },
+    {
+        "model": "goods.goods",
+        "pk": 5,
+        "fields": {
+            "name": "Киберпанк-кресло с голографическим интерфейсом",
+            "slug": "kiberpank-kreslo-s-golograficheskim-interfejsom",
+            "description": "Эргономичное кресло с голографическим интерфейсом управления и встроенными сенсорами для контроля комфорта. Подходит как для офиса, так и для дома.",
+            "image": "goods_images/cyberpunk_chair.jpg",
+            "price": "780.00",
+            "discount": "20.00",
+            "quantity": 15,
+            "category": 10,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    },
+    {
+        "model": "goods.goods",
+        "pk": 6,
+        "fields": {
+            "name": "Футуристический осветительный модуль 'Лунный свет'",
+            "slug": "futuristicheskij-osvetitelnyj-modul-lunnyj-svet",
+            "description": "Осветительный модуль в форме луны с возможностью изменения цвета и интенсивности света через приложение. Создаёт атмосферу футуризма и спокойствия.",
+            "image": "goods_images/moonlight_lamp.jpg",
+            "price": "350.00",
+            "discount": "25.00",
+            "quantity": 20,
+            "category": 12,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    },
+    {
+        "model": "goods.goods",
+        "pk": 7,
+        "fields": {
+            "name": "Стол для переговоров с голографическим дисплеем",
+            "slug": "stol-dlya-peregovorov-s-golograficheskim-displeem",
+            "description": "Современный стол для переговоров с встроенным голографическим дисплеем для демонстрации проектов и визуализаций в реальном времени.",
+            "image": "goods_images/holographic_meeting_table.jpg",
+            "price": "5000.00",
+            "discount": "0.00",
+            "quantity": 1,
+            "category": 10,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    },
+    {
+        "model": "goods.goods",
+        "pk": 8,
+        "fields": {
+            "name": "Футуристический кухонный остров с 3D-печатью еды",
+            "slug": "futuristicheskij-kuhonnyj-ostrov-s-3d-pechatyu-edy",
+            "description": "Инновационный кухонный остров с интегрированной системой 3D-печати еды. Умная поверхность распознает продукты и подбирает рецепты.",
+            "image": "goods_images/futuristic_kitchen_island.jpg",
+            "price": "8500.00",
+            "discount": "5.00",
+            "quantity": 2,
+            "category": 7,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    },
+    {
+        "model": "goods.goods",
+        "pk": 9,
+        "fields": {
+            "name": "Интерактивные шторы с изменяемой прозрачностью",
+            "slug": "interaktivnye-shtory-s-izmenyaemoj-prozrachnostyu",
+            "description": "Шторы с изменяемой прозрачностью, управляемые через приложение. Идеальны для регулировки уровня освещения в футуристических интерьерах.",
+            "image": "goods_images/interactive_curtains.jpg",
+            "price": "1200.00",
+            "discount": "10.00",
+            "quantity": 8,
+            "category": 12,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    },
+    {
+        "model": "goods.goods",
+        "pk": 10,
+        "fields": {
+            "name": "Гардеробная капсула с системой распознавания одежды",
+            "slug": "garderobnaya-kapsula-s-rasspoznavaniem-odezhdy",
+            "description": "Умная гардеробная с системой распознавания одежды и предложением вариантов нарядов. Обновите свой гардероб в футуристическом стиле.",
+            "image": "goods_images/smart_closet.jpg",
+            "price": "6500.00",
+            "discount": "0.00",
+            "quantity": 2,
+            "category": 8,
+            "timecreation": "2024-08-01 14:06:05.299371"
+        }
+    }
+]
