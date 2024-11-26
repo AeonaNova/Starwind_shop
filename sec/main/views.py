@@ -10,7 +10,7 @@ def index(request):
     #     'id': 'Home',
     #     'content' : 'Главная страница магазина - Home'
     # }
-    return render(request, 'main/index.html', {'title': 'Главная страница магазина - Home', 'categories': categories})
+    return render(request, 'main/index.html', {'title': 'Магазин Starwind', 'categories': categories})
 # render, 'index.html'
 
 

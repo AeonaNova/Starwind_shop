@@ -12,4 +12,3 @@ urlpatterns = [
     path('product/<slug:product_slug>/', views.GoodsView.as_view(), name='product'),
 
 ]
-

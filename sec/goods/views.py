@@ -37,7 +37,7 @@ class CatalogView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)#обращение к MultipleObjectMixin классу
-        context["title"] = 'HOME'
+        context["title"] = 'Starwind'
         context["slug_ulr"] = self.kwargs.get(self.slug_url_kwarg)
 
         return context
