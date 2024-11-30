@@ -19,7 +19,7 @@
                     <div class="input-group">
                             <span class="input-group-btn">
                                 <button type="button"
-                                        class="btn btn-dark btn-sm decrement"
+                                        class="btn btn-secondary btn-sm decrement"
                                         data-cart-id="{{ cart.id }}"
                                         data-cart-change-url="{% url 'cart:cart_change' %}">
                                     {% csrf_token %}
@@ -30,7 +30,7 @@
                                readonly>
                         <span class="input-group-btn">
                             <button type="button"
-                                    class="btn btn-dark btn-sm increment"
+                                    class="btn btn-secondary btn-sm increment"
                                     data-cart-id="{{ cart.id }}"
                                     data-cart-change-url="{% url 'cart:cart_change' %}">
                                 {% csrf_token %}
@@ -62,7 +62,7 @@
         <h4 class="float-left"><strong> {{ carts.total_price }} $</strong></h4>
     </div>
 </div>
-<a class="btn btn-dark" href="#">
+<a class="btn btn-secondary" href="{% url 'orders:create_order' %}">
     Оформить заказ
 </a>
 

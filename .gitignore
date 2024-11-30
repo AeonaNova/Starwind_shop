@@ -23,6 +23,7 @@ var/
 wheels/
 share/python-wheels/
 *.egg-info/
+templates-for-Django-4-course-Home/
 .installed.cfg
 *.egg
 MANIFEST

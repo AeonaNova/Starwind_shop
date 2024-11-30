@@ -13,11 +13,11 @@
 
     <!-- Форма фильтров -->
     <div class="dropdown mb-2">
-        <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Фильтры
         </button>
 
-        <form action="{% if request.GET.q %}{% url 'catalog:search' %}{% else %}{% url 'catalog:index' slug_ulr %}{% endif %}" method="get" class="dropdown-menu bg-dark" data-bs-theme="dark">
+        <form action="{% if request.GET.q %}{% url 'catalog:search' %}{% else %}{% url 'catalog:index' slug_ulr %}{% endif %}" method="get" class="dropdown-menu bg-secondary" data-bs-theme="secondary">
             <div class="form-check text-white mx-3">
                 <input class="form-check-input" type="checkbox" name="on_sale" id="flexCheckDefault" value="on" {% if request.GET.on_sale == 'on' %}checked{% endif %}>
                 {% if request.GET.q %}
@@ -77,7 +77,7 @@
                         {% if good.discount %}
                             <p><s>{{ good.price }}</s> $</p>
                             <p><strong>{{ good.final_price }} $</strong></p>
-                            <span class="badge bg-warning text-dark">{{ good.discount }}%</span>
+                            <span class="badge bg-warning text-secondary">{{ good.discount }}%</span>
                         {% else %}
                             <p><strong>{{ good.price }} $</strong></p>
                         {% endif %}
@@ -134,7 +134,7 @@
 
 
 {% block footer%}
-    <footer class="py-4 bg-dark">
+    <footer class="py-4 bg-secondary">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; AeonaNova </p>
         </div>

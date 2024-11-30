@@ -9,7 +9,7 @@ class CatalogView(ListView):
     template_name = 'goods/catalog.html'
     context_object_name = 'product'
     paginate_by = 3
-    allow_empty = False
+    allow_empty = True
     slug_url_kwarg = 'category_slug' # поступает из urls, с запросом 'request'
 
     def get_queryset(self):
