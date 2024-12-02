@@ -23,6 +23,8 @@ body {
   margin-bottom: 20px;
   background: rgba(255,255,255,0.8);
   backdrop-filter: blur(5px);
+  overflow-y: auto;
+  max-height: 400px;
 }
 .card:hover{
   transform: scale(1.02); /* Увеличить при наведении */
