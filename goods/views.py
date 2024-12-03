@@ -1,7 +1,7 @@
 from django.views.generic import ListView, DetailView
 from django.http import Http404
 from .utils import q_search
-from .models import Categories, Goods
+from .models import Goods
 
 
 class CatalogView(ListView):
@@ -10,17 +10,16 @@ class CatalogView(ListView):
     context_object_name = 'product'
     paginate_by = 3
     allow_empty = True
-    slug_url_kwarg = 'category_slug' # поступает из urls, с запросом 'request'
+    slug_url_kwarg = 'category_slug'  # поступает из urls, с запросом 'request'
 
     def get_queryset(self):
         category_slug = self.kwargs.get(self.slug_url_kwarg)
         on_sale = self.request.GET.get('on_sale')
         order_by = self.request.GET.get('order_by')
         query = self.request.GET.get('q')
-        print(query)
 
         if category_slug == 'all':
-            product = super().get_queryset() #обращение к MultipleObjectMixin классу
+            product = super().get_queryset()  # обращение к MultipleObjectMixin классу
         elif query:
             product = q_search(query)
         else:
@@ -36,7 +35,7 @@ class CatalogView(ListView):
         return product
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)#обращение к MultipleObjectMixin классу
+        context = super().get_context_data(**kwargs)  # обращение к MultipleObjectMixin классу
         context["title"] = 'Starwind'
         context["slug_ulr"] = self.kwargs.get(self.slug_url_kwarg)
 
@@ -56,36 +55,3 @@ class GoodsView(DetailView):
         context = super().get_context_data(**kwargs)
         context["title"] = self.object.name
         return context
-
-
-# def goods(request, product_slug=None):
-#     thing = Goods.objects.get(slug=product_slug)
-#
-#     context = {'thing': thing}
-#
-#     return render(request, 'goods/product.html', context)
-
-# def catalog(request, category_slug=None):
-#
-#     query = request.GET.get('q', 1)
-#
-#     if category_slug == 'all':
-#         categories = Categories.objects.all()
-#         product = Goods.objects.all()
-#
-#     else:
-#         # categories = Categories.objects.filter(slug=category_slug)
-#         product = Goods.objects.filter(category__slug=category_slug)
-#     paginator = Paginator(product, 3)
-#     page_number = request.GET.get('page', 1)
-#     page_obj = paginator.page(int(page_number)) #get_page
-#
-#     context = {
-#         "title": 'Товары раздела ' ,#+ categories[0].name
-#         # "categories": categories,
-#         "slug_url": category_slug,
-#         "product": page_obj
-#     }
-#     return render(request, 'goods/catalog.html', context)
-
-

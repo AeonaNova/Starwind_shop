@@ -1,10 +1,6 @@
 from django.db import models
-import goods
-import users
-from goods.models import Goods
 
 
-# Create your models here.
 class CartQueryset(models.QuerySet):
 
     def total_price(self):

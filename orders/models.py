@@ -1,7 +1,5 @@
 from django.db import models
-from goods.models import Goods
 
-from users.models import User
 
 class OrderitemQueryset(models.QuerySet):
 
@@ -12,6 +10,7 @@ class OrderitemQueryset(models.QuerySet):
         if self:
             return sum(cart.quantity for cart in self)
         return 0
+
 
 class Order(models.Model):
     user = models.ForeignKey(to='users.User', on_delete=models.SET_DEFAULT, default=None, blank=True, null=True,
@@ -33,7 +32,7 @@ class Order(models.Model):
     def __str__(self):
         return f"Заказ №{self.pk} | Покупатель {self.user.first_name} {self.user.last_name}"
 
-# Create your models here.
+
 class OrderItem(models.Model):
     order = models.ForeignKey(to='Order', on_delete=models.CASCADE, verbose_name='Заказ')
     product = models.ForeignKey(to='goods.Goods', on_delete=models.SET_DEFAULT, verbose_name='Товар', default=None)

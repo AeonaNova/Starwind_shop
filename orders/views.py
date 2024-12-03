@@ -8,8 +8,6 @@ from orders.forms import CreateOrderForm
 from orders.models import Order, OrderItem
 
 
-# Create your views here.
-
 def create_order(request):
     if request.method == 'POST':
         form = CreateOrderForm(data=request.POST)
@@ -30,10 +28,10 @@ def create_order(request):
                             )
                             # Создать заказанные товары
                             for cart_item in cart_items:
-                                product=cart_item.product
-                                name=cart_item.product.name
-                                price=cart_item.product.final_price()
-                                quantity=cart_item.quantity
+                                product = cart_item.product
+                                name = cart_item.product.name
+                                price = cart_item.product.final_price()
+                                quantity = cart_item.quantity
 
                                 if product.quantity < quantity:
                                     raise ValidationError(f'Недостаточное количество товара {name} на складе\

@@ -3,7 +3,6 @@ from .models import Goods
 from django.db.models import Q
 
 
-
 def q_search(query):
     keywords = [word for word in query.split() if len(word) > 2]
     q_objects = Q()

@@ -1,7 +1,6 @@
 from django.contrib import admin
-
-# Register your models here.
 from .models import Cart
+
 
 class CartView(admin.TabularInline):
     model = Cart
@@ -9,6 +8,7 @@ class CartView(admin.TabularInline):
     search_fields = "product", "quantity", "created_timestamp"
     readonly_fields = ("creation_timestamp",)
     extra = 1
+
 
 @admin.register(Cart)
 class CartAdmin(admin.ModelAdmin):
