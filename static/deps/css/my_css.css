@@ -24,7 +24,7 @@ body {
   background: rgba(255,255,255,0.8);
   backdrop-filter: blur(5px);
   overflow-y: auto;
-  max-height: 400px;
+  max-height: 600px;
 }
 .card:hover{
   transform: scale(1.02); /* Увеличить при наведении */
@@ -53,6 +53,25 @@ body {
 .card-img-top{
     filter: drop-shadow(2px 2px 5px black);
 }
+.img-thumbnail {
+  max-width: 130px; /* Установите максимальную ширину для изображений */
+  max-height: 130px; /* Установите максимальную высоту для изображений */
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-group {
+  max-width: 120px; /* Установите максимальную ширину для группы ввода */
+}
+
+.cart-items-container {
+  max-height: 500px; /* Установите максимальную высоту для контейнера корзины */
+  overflow-y: auto; /* Добавьте вертикальный скроллинг */
+}
+
 .card-body{
     text-align: center;
 }

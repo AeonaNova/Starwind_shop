@@ -1,54 +1,106 @@
 
+<!--{% load static %}-->
+
+<!--<div class="card mb-3 text-bg-light shadow-lg ">-->
+<!--    {% for cart in carts %}-->
+<!--    <div class="card-header">-->
+<!--        <h5 class="card-title">{{ cart.product.name }}</h5>-->
+<!--    </div>-->
+<!--    <ul class="list-group list-group-flush">-->
+<!--        <li class="list-group-item">-->
+<!--            <div class="col-md-3 mb-3 text-center">-->
+<!--                <div class="col-md-12">-->
+<!--                    <img src="{{ cart.product.image.url }}"-->
+<!--                         class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row text-center">-->
+<!--                <div class="col p-0">-->
+<!--                    <div class="input-group">-->
+<!--                            <span class="input-group-btn">-->
+<!--                                <button type="button"-->
+<!--                                        class="btn btn-secondary btn-sm decrement"-->
+<!--                                        data-cart-id="{{ cart.id }}"-->
+<!--                                        data-cart-change-url="{% url 'cart:cart_change' %}">-->
+<!--                                    {% csrf_token %}-->
+<!--                                    -</button>-->
+
+<!--                            </span>-->
+<!--                        <input type="text" class="form-control number" value="{{ cart.quantity }}"-->
+<!--                               readonly>-->
+<!--                        <span class="input-group-btn">-->
+<!--                            <button type="button"-->
+<!--                                    class="btn btn-secondary btn-sm increment"-->
+<!--                                    data-cart-id="{{ cart.id }}"-->
+<!--                                    data-cart-change-url="{% url 'cart:cart_change' %}">-->
+<!--                                {% csrf_token %}-->
+<!--                                +</button>-->
+<!--                        </span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col p-0">-->
+<!--                    <p>x {{ cart.product.final_price }} = </p>-->
+<!--                </div>-->
+<!--                <div class="col p-0"><strong> {{cart.products_price}} $</strong></div>-->
+
+<!--                <div class="col p-0">-->
+<!--                    <a href="{% url 'cart:cart_remove' %}" class="remove-from-cart"-->
+<!--                       data-cart-id="{{ cart.id }}">-->
+<!--                        {% csrf_token %}-->
+<!--                        <img class="mx-1" src="{% static 'deps/icons/trash3-fill.svg'%}"-->
+<!--                             alt="Catalog Icon" width="16" height="16">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+<!--<div class="card mb-1 shadow-lg">-->
+<!--    <div class="card-footer">-->
+<!--        <p class="float-left">Итого <strong>{{ carts.total_quantity }}</strong> товар(а) на сумму</p>-->
+<!--        <h4 class="float-left"><strong> {{ carts.total_price }} $</strong></h4>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<a class="btn btn-secondary" href="{% url 'orders:create_order' %}">-->
+<!--    Оформить заказ-->
+<!--</a>-->
+
 {% load static %}
 
-<div class="card mb-3 text-bg-light shadow-lg ">
+<div class="card mb-3 text-bg-light shadow-lg">
     {% for cart in carts %}
     <div class="card-header">
         <h5 class="card-title">{{ cart.product.name }}</h5>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
-            <div class="col-md-2 mb-3 text-center">
-                <div class="col-md-12">
-                    <img src="{{ cart.product.image.url }}"
-                         class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">
+            <div class="d-flex align-items-center col-md-8">
+                <div class="col-md-3 mb-3 flex-grow-1 text-center">
+                    <img src="{{ cart.product.image.url }}" class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">
                 </div>
-            </div>
-            <div class="row text-center">
-                <div class="col p-0">
+                <div class="col-md-2 p-1 flex-grow-1">
                     <div class="input-group">
-                            <span class="input-group-btn">
-                                <button type="button"
-                                        class="btn btn-secondary btn-sm decrement"
-                                        data-cart-id="{{ cart.id }}"
-                                        data-cart-change-url="{% url 'cart:cart_change' %}">
-                                    {% csrf_token %}
-                                    -</button>
-
-                            </span>
-                        <input type="text" class="form-control number" value="{{ cart.quantity }}"
-                               readonly>
                         <span class="input-group-btn">
-                            <button type="button"
-                                    class="btn btn-secondary btn-sm increment"
-                                    data-cart-id="{{ cart.id }}"
-                                    data-cart-change-url="{% url 'cart:cart_change' %}">
+                            <button type="button" class="btn btn-secondary btn-sm decrement" data-cart-id="{{ cart.id }}" data-cart-change-url="{% url 'cart:cart_change' %}">
                                 {% csrf_token %}
-                                +</button>
+                                -
+                            </button>
+                        </span>
+                        <input type="text" class="form-control number" value="{{ cart.quantity }}" readonly>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-secondary btn-sm increment" data-cart-id="{{ cart.id }}" data-cart-change-url="{% url 'cart:cart_change' %}">
+                                {% csrf_token %}
+                                +
+                            </button>
                         </span>
                     </div>
+                    <p class="my-2">x {{ cart.product.final_price }} = <strong>{{cart.products_price}} $</strong></p>
                 </div>
-                <div class="col p-0">
-                    <p>x {{ cart.product.final_price }} = </p>
-                </div>
-                <div class="col p-0"><strong> {{cart.products_price}} $</strong></div>
-
-                <div class="col p-0">
-                    <a href="{% url 'cart:cart_remove' %}" class="remove-from-cart"
-                       data-cart-id="{{ cart.id }}">
+                <div class="col p-0 text-center">
+                    <a href="{% url 'cart:cart_remove' %}" class="remove-from-cart" data-cart-id="{{ cart.id }}">
                         {% csrf_token %}
-                        <img class="mx-1" src="{% static 'deps/icons/trash3-fill.svg'%}"
-                             alt="Catalog Icon" width="16" height="16">
+                        <img src="{% static 'deps/icons/trash3-fill.svg'%}" alt="Catalog Icon" width="16" height="16">
                     </a>
                 </div>
             </div>
@@ -56,7 +108,7 @@
     </ul>
     {% endfor %}
 </div>
-<div class="card mb-3 shadow-lg">
+<div class="card mb-1 shadow-lg">
     <div class="card-footer">
         <p class="float-left">Итого <strong>{{ carts.total_quantity }}</strong> товар(а) на сумму</p>
         <h4 class="float-left"><strong> {{ carts.total_price }} $</strong></h4>
@@ -65,4 +117,3 @@
 <a class="btn btn-secondary" href="{% url 'orders:create_order' %}">
     Оформить заказ
 </a>
-
