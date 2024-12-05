@@ -12,7 +12,6 @@ class Goods(models.Model):
     quantity = models.PositiveIntegerField(default=0, verbose_name='Количество')
     category = models.ForeignKey('Categories', on_delete=models.PROTECT, verbose_name='Категории')
 
-
     class Meta:
         db_table = 'good'
         verbose_name = 'Товар'
@@ -35,3 +34,12 @@ class Goods(models.Model):
 class Categories(models.Model):
     name = models.CharField(max_length=200, null=True, unique=True, blank=True, verbose_name='Категория')
     slug = models.CharField(max_length=200, unique=True, null=True, blank=True, verbose_name='URl')
+
+    class Meta:
+        db_table = 'categories'
+        verbose_name = 'Категорию'
+        verbose_name_plural = 'Категории'
+        ordering = ("id",)
+
+    def __str__(self):
+        return self.name

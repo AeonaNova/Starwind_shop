@@ -9,8 +9,11 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,8 +22,12 @@ SECRET_KEY = 'django-insecure-j8qh2wp-3@z)8cmzt&y(+&s6@i7g-4q2vjq#q1(&8pu4-39ru=
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
+# Добавляем 'testserver' в ALLOWED_HOSTS если запускаются тесты
+if DEBUG:
+    ALLOWED_HOSTS.append('testserver')
+print(ALLOWED_HOSTS)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -48,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'sec.urls'
+ROOT_URLCONF = os.environ.get('DJANGO_ROOT_URLCONF', 'sec.urls')# для запуска тестов и локально
 
 TEMPLATES = [
     {
@@ -119,3 +126,5 @@ AUTH_USER_MODEL = 'users.User'
 
 LOGIN_URL = '/user/login/'
 LOGIN_REDIRECT_URL = '/'
+
+

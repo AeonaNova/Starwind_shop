@@ -1,0 +1,8 @@
+для того чтобы запустить локально в docker-compose бд мне в settings.py понадобилось HOST изменить на bd
+когда изменил поля verbose name в моделях то не завелась база данных
+docker-compose up -d
+docker-compose exec app python manage.py migrate #команды помогли запустить миграции
+можно было добавить команду в docker-compose yml:
+app:
+  ...
+  command: python manage.py migrate && python manage.py runserver 0.0.0.0:8000

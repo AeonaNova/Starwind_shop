@@ -1,6 +1,7 @@
 from django.db import models
-
-
+from users.models import User
+from goods.models import Goods
+import goods
 class OrderitemQueryset(models.QuerySet):
 
     def total_price(self):
