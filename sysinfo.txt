@@ -6,3 +6,5 @@ docker-compose exec app python manage.py migrate #команды помогли 
 app:
   ...
   command: python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+
+для тестов мне понадобилось изменить urlconf в settings
